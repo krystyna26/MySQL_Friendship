@@ -1,0 +1,6 @@
+SELECT u.first_name, u.last_name, f.first_name as friend_first_name, f.last_name as friend_last_name
+FROM users u
+LEFT JOIN friendship ON u.id = friendship.users_id
+LEFT JOIN users f ON friendship.friend_id = f.id
+WHERE u.id = 7
+ORDER BY f.last_name ASC
